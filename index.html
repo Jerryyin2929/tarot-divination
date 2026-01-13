@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘塔罗 - 塔罗牌占卜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 主页面 -->
+        <div id="mainPage" class="page">
+            <header>
+                <h1>🔮 神秘塔罗</h1>
+                <p class="subtitle">探索命运的指引</p>
+            </header>
+
+            <div class="content">
+                <div class="intro">
+                    <p>塔罗牌是一种古老的占卜工具，能够揭示你内心的智慧与未来的可能。</p>
+                    <p>请专注于你的问题，然后选择一张牌...</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card-back" onclick="startDivination()">
+                        <div class="card-inner">
+                            <span class="card-icon">🎴</span>
+                            <span class="card-text">点击开始占卜</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-primary" onclick="startDivination()">
+                    开始占卜仪式
+                </button>
+            </div>
+
+            <footer>
+                <p>仅供娱乐 • 相信自己的直觉</p>
+            </footer>
+        </div>
+
+        <!-- 占卜页面 -->
+        <div id="divinationPage" class="page hidden">
+            <header>
+                <h1>🎯 专注你的问题</h1>
+                <p class="subtitle">静心思考，选择指引你的牌</p>
+            </header>
+
+            <div class="content">
+                <div class="question-input">
+                    <input type="text" id="userQuestion" placeholder="输入你的问题（可选）...">
+                </div>
+
+                <div class="card-grid" id="cardGrid">
+                    <!-- 卡牌将通过JS动态生成 -->
+                </div>
+
+                <button class="btn-secondary" onclick="backToMain()">
+                    返回
+                </button>
+            </div>
+        </div>
+
+        <!-- 结果页面 -->
+        <div id="resultPage" class="page hidden">
+            <header>
+                <h1>✨ 占卜结果</h1>
+                <p class="subtitle">命运的指引已经显现</p>
+            </header>
+
+            <div class="content">
+                <div class="result-card">
+                    <div class="card-display">
+                        <div class="card-front" id="resultCard">
+                            <div class="card-name" id="cardName"></div>
+                            <div class="card-number" id="cardNumber"></div>
+                        </div>
+                    </div>
+
+                    <div class="result-info">
+                        <h3 id="cardTitle"></h3>
+                        <div class="card-meaning">
+                            <p id="cardMeaning"></p>
+                        </div>
+                        <div class="card-advice">
+                            <h4>💡 建议与指引</h4>
+                            <p id="cardAdvice"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-primary" onclick="startDivination()">
+                        再占一次
+                    </button>
+                    <button class="btn-secondary" onclick="backToMain()">
+                        返回首页
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 背景装饰元素 -->
+        <div class="stars" id="stars"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
