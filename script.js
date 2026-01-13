@@ -222,7 +222,7 @@ function createCardSelection() {
     selectedCards.forEach((card, index) => {
         const cardElement = document.createElement('div');
         cardElement.className = 'tarot-card';
-        cardElement.innerHTML = card.emoji;
+        cardElement.innerHTML = '🎴';
         cardElement.onclick = () => selectCard(card, cardElement);
 
         // 添加延迟动画
