@@ -260,6 +260,7 @@ function showResult(card) {
     const question = userQuestion.value.trim();
 
     // 更新结果页面内容
+    document.getElementById('cardEmoji').textContent = card.emoji;
     document.getElementById('cardName').textContent = card.name;
     document.getElementById('cardNumber').textContent = card.number;
     document.getElementById('cardTitle').textContent = `你抽到了：${card.name}`;
